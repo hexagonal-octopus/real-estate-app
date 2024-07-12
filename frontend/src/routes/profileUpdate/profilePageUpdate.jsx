@@ -2,11 +2,12 @@ import React, { useContext, useState } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 import apiRequest from "../../lib/apiRequest";
+import UploadWidget from "../../components/uploadWidget/UploadWidget";
 
 const ProfilePageUpdate = () => {
   const { updateUser, currentUser } = useContext(AuthContext);
   const [error, setError] = useState("");
-  const [avatar, setAvatar] = useState("");
+  const [avatar, setAvatar] = useState([]);
 
   const navigate = useNavigate();
 
@@ -21,6 +22,7 @@ const ProfilePageUpdate = () => {
         username,
         email,
         password,
+        avatar: avatar[0],
       });
       updateUser(res.data);
       navigate("/profile");
@@ -57,11 +59,21 @@ const ProfilePageUpdate = () => {
           </div>
         </form>
       </div>
-      <div classname="side-container">
+      <div className="side-container">
         <img
           src={avatar[0] || currentUser.avatar || "/noavatar.jpg"}
           alt=""
           className="avatar"
+        />
+        <UploadWidget
+          uwConfig={{
+            cloudName: "dfaqenzpn",
+            uploadPreset: "real-estate",
+            multiple: false,
+            maxImageFileSize: 2000000, //2MB
+            folder: "avatars",
+          }}
+          setState={setAvatar}
         />
       </div>
     </div>
