@@ -7,6 +7,8 @@ import LoginPage from "./routes/login/loginPage";
 import ProfilePageUpdate from "./routes/profileUpdate/profilePageUpdate";
 import AddNewPost from "./routes/posts/addNewPost";
 import DetailPostPage from "./routes/posts/detailPost";
+import { listPageLoader, singePageLoader } from "./lib/loaders";
+import ListPostPage from "./routes/posts/listPost";
 
 function App() {
   const router = createBrowserRouter([
@@ -19,8 +21,14 @@ function App() {
           element: <HomePage />,
         },
         {
+          path: "/posts",
+          element: <ListPostPage />,
+          loader: listPageLoader,
+        },
+        {
           path: "/post/:id",
           element: <DetailPostPage />,
+          loader: singePageLoader,
         },
         {
           path: "/login",
