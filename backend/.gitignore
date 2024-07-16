@@ -3,3 +3,5 @@ node_modules
 .env
 doc.md
 docs.md
+
+*.DS_Store
