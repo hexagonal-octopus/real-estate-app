@@ -1,6 +1,6 @@
 import React, { Suspense } from "react";
 import { Await, useLoaderData } from "react-router-dom";
-import Filter from "../../components/uploadWidget/Filter";
+import Filter from "../../components/Filter";
 
 const ListPostPage = () => {
   //   const posts = useLoaderData();

@@ -1,0 +1,7 @@
+@font-face {
+  font-family: "Inter";
+  src: url("../assets/fonts/interVariable.woff2")
+      format("woff2 supports variations"),
+    url("../assets/fonts/interVariable.woff2") format("woff2-variations");
+  font-weight: 100 1000;
+}

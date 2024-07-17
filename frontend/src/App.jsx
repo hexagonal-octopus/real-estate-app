@@ -9,6 +9,7 @@ import AddNewPost from "./routes/posts/addNewPost";
 import DetailPostPage from "./routes/posts/detailPost";
 import { listPageLoader, singePageLoader } from "./lib/loaders";
 import ListPostPage from "./routes/posts/listPost";
+import "./scss/style.scss";
 
 function App() {
   const router = createBrowserRouter([
@@ -31,7 +32,7 @@ function App() {
           loader: singePageLoader,
         },
         {
-          path: "/login",
+          path: "/auth/login",
           element: <LoginPage />,
         },
       ],

@@ -1,0 +1,15 @@
+@use "../abstracts" as *;
+
+.container {
+  width: 100%;
+  padding: 0 16px;
+  @include breakpoint("medium") {
+    width: 800px;
+    margin: 0 auto;
+  }
+
+  @include breakpoint("large") {
+    width: 1040px;
+    margin: 0 auto;
+  }
+}

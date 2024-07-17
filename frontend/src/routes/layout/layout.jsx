@@ -1,11 +1,12 @@
 import React, { useContext } from "react";
 import { Navigate, Outlet } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
+import Navbar from "../../components/Navbar";
 
 function Layout() {
   return (
     <div className="layout">
-      <div className="navbar"></div>
+      <Navbar />
       <div className="content">
         <Outlet />
       </div>
@@ -23,7 +24,7 @@ function RequireAuthLayout() {
   return (
     currentUser && (
       <div className="layout">
-        <div className="navbar"></div>
+        <Navbar />
         <div className="content">
           <Outlet />
         </div>
