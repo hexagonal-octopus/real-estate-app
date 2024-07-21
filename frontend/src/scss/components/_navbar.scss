@@ -1,5 +1,8 @@
+@use "../abstracts/functions" as *;
+
 .navbar {
   padding: 24px 0;
+  font-size: rem(18);
   .inner {
     display: flex;
     align-items: center;
@@ -8,6 +11,23 @@
 
   a {
     text-decoration: none;
+  }
+
+  ul{
+    display: flex;
+
+    li{
+      margin: 0 8px;
+    }
+  }
+
+  .actions{
+    display: flex;
+    align-items: center;
+
+    a + .button{
+      margin-left: 16px;
+    }
   }
 }
 

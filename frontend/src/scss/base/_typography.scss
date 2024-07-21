@@ -1,5 +1,13 @@
+@use "../abstracts/functions" as *;
+@use "sass:math";
+
 body {
   font-family: "Inter", var(--font-fallback);
   font-size: 1rem;
   line-height: 1.5;
+}
+
+h1, .h1{
+  font-size: rem(42);
+  line-height: math.div(54,42);
 }

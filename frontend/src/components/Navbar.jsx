@@ -27,7 +27,7 @@ const Navbar = () => {
           <div className="actions">
             <Link href="/auth/login">Sign in</Link>
             <Link className="button button--primary" href="/auth/register">
-              Sign up
+              Join
             </Link>
           </div>
         </div>
