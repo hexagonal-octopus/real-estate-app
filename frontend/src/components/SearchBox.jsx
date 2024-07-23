@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { capitalizeFirstLetter } from "../lib/utils";
+import icon from "/search.png";
 const types = ["buy", "rent"];
 
 const initalQuery = {
@@ -16,6 +17,10 @@ const SearchBox = () => {
     setQuery((prev) => ({ ...prev, type: val }));
   };
 
+  const changeHandle = (e) => {
+    setQuery((prev => ({...prev, [e.target.name]: e.target.value})))
+  }
+
   const submitHandle = (e) => {
     e.preventDefault();
   };
@@ -31,7 +36,21 @@ const SearchBox = () => {
           ))}
       </div>
       <div className="bottom">
-        <form onSubmit={submitHandle}></form>
+        <form className="form" onSubmit={submitHandle}>
+          <div className="form-group">
+            <label htmlFor="city">Select City</label>
+            <input type="text" onChange={changeHandle} name="city" id="city" value={query.city} />
+          </div>
+          <div className="form-group">
+            <label htmlFor="minPrice">Minimum Price</label>
+            <input type="text" onChange={changeHandle} name="minPrice" id="minPrice" value={query.minPrice} />
+          </div>
+          <div className="form-group">
+            <label htmlFor="maxPrice">Maximum Price</label>
+            <input type="text" onChange={changeHandle} name="maxPrice" id="maxPrice" value={query.maxPrice} />
+          </div>
+          <button type="submit"><img src={icon} alt=""/></button>
+        </form>
       </div>
     </div>
   );
