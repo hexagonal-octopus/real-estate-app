@@ -14,19 +14,19 @@ const Navbar = () => {
           <nav className="list">
             <ul role="list">
               <li>
-                <Link href="/about">About</Link>
+                <Link to="/about">About</Link>
               </li>
               <li>
-                <Link href="/listing">Listing</Link>
+                <Link to="/posts">Listing</Link>
               </li>
               <li>
-                <Link href="/agents">Agents</Link>
+                <Link to="/agents">Agents</Link>
               </li>
             </ul>
           </nav>
           <div className="actions">
-            <Link href="/auth/login">Sign in</Link>
-            <Link className="button button--primary" href="/auth/register">
+            <Link to="/auth/login">Sign in</Link>
+            <Link className="button button--primary" to="/auth/register">
               Join
             </Link>
           </div>
