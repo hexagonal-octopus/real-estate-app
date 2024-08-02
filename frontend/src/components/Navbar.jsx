@@ -1,8 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { TiThLarge } from "react-icons/ti";
 
 const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleClick = () => {
+    setIsOpen((prev) => !prev);
+  };
+
   return (
     <div className="navbar">
       <div className="container">
@@ -11,11 +17,15 @@ const Navbar = () => {
             <Link href="/">
               <span>SimplySpaces</span>
             </Link>
-          </div>
-          <div className="menu">
-            <button className="button button--link toggler" type="button">
+            <button
+              className="button button--link toggler"
+              type="button"
+              onClick={handleClick}
+            >
               <TiThLarge size={24} color="red" />
             </button>
+          </div>
+          <div className={`${isOpen ? "menu active" : "menu"}`}>
             <nav className="list">
               <ul role="list">
                 <li>
