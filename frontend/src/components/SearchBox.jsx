@@ -32,11 +32,11 @@ const SearchBox = () => {
   };
 
   return (
-    <div className="searchbox">
+    <div className="searchbox py-16">
       <div className="top">
         {types &&
           types.map((type) => (
-            <button onClick={() => typeHandle(type)}>
+            <button className={`button ${type === query.type ? 'active' : ''}`} onClick={() => typeHandle(type)}>
               {capitalizeFirstLetter(type)}
             </button>
           ))}
@@ -47,6 +47,7 @@ const SearchBox = () => {
             <label htmlFor="city">Select City</label>
             <input
               type="text"
+              className="form-control"
               onChange={changeHandle}
               name="city"
               id="city"
@@ -57,6 +58,7 @@ const SearchBox = () => {
             <label htmlFor="minPrice">Minimum Price</label>
             <input
               type="text"
+              className="form-control"
               onChange={changeHandle}
               name="minPrice"
               id="minPrice"
@@ -67,13 +69,14 @@ const SearchBox = () => {
             <label htmlFor="maxPrice">Maximum Price</label>
             <input
               type="text"
+              className="form-control last"
               onChange={changeHandle}
               name="maxPrice"
               id="maxPrice"
               value={query.maxPrice}
             />
           </div>
-          <button type="submit">
+          <button type="submit" className="button button--submit">
             <img src={icon} alt="" />
           </button>
         </form>

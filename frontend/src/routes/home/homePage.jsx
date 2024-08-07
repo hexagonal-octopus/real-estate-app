@@ -5,7 +5,7 @@ import SearchBox from "../../components/SearchBox";
 
 const HomePage = () => {
   return (
-    <section>
+    <section className="sections py-16">
       <div className="container">
         <h1 className="text-center">
           The #1 site real estate professional trust.
