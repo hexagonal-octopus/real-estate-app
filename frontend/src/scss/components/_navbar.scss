@@ -1,48 +1,121 @@
 @use "../abstracts/functions" as *;
+@use "../abstracts/mixins" as *;
 
 .navbar {
   padding: 24px 0;
   font-size: rem(18);
+
   .inner {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+  }
+
+  .menu {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    height: 100%;
+    width: 320px;
+    background: black;
+    padding-top: 120px;
+    top: 0;
+    right: 0;
+    transform: translateX(320px);
+    transition: all 250ms ease-out;
+
+    @include breakpoint(medium) {
+      position: static;
+      flex-direction: row;
+      width: auto;
+      background: transparent;
+      padding-top: 0px;
+      transform: translateX(0);
+    }
+
+    &.active {
+      transform: translateX(0);
+    }
+  }
+
+  .toggler {
+    position: relative;
+    z-index: 5;
+    @include breakpoint(medium) {
+      display: none;
+    }
+  }
+
+  .list {
+    width: 100%;
+    padding: 0 24px;
+    @include breakpoint(medium) {
+      flex: 2;
+      width: auto;
+      padding: 0;
+    }
   }
 
   a {
     text-decoration: none;
   }
 
-  ul{
-    display: flex;
+  ul {
+    @include breakpoint(medium) {
+      display: flex;
+    }
 
-    li{
-      margin: 0 8px;
+    li {
+      margin: 8px 0;
+      color: white;
+      @include breakpoint(medium) {
+        margin: 0 8px;
+        color: black;
+      }
     }
   }
 
-  .actions{
+  .actions {
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    margin-top: 16px;
+    width: 100%;
+    padding: 16px 24px;
+    @include breakpoint(medium) {
+      flex-direction: row;
+      align-items: center;
+      border: 0;
+      width: auto;
+      padding: 0;
+      margin-top: 0;
+    }
 
-    a + .button{
-      margin-left: 16px;
+    a {
+      color: white;
+      @include breakpoint(medium) {
+        color: black;
+      }
+    }
+
+    a + .button {
+      @include breakpoint(medium) {
+        margin-left: 16px;
+        color: white;
+      }
     }
   }
 }
 
 .brand {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1;
+
   span {
     font-weight: 800;
     font-size: 1.5rem;
-  }
-
-  ul {
-    display: flex;
-    flex-flow: row wrap;
-  }
-
-  li {
-    margin: 0 16px;
   }
 }

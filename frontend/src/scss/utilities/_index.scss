@@ -14,21 +14,27 @@
   }
 }
 
-.button{
+.button {
   text-decoration: none;
   padding: 8px 16px;
   border-radius: 8px;
   margin: 8px 0;
-  outline:none;
+  outline: none;
   box-shadow: none;
+  cursor: pointer;
 
-  &--primary{
+  &--primary {
     background: var(--color-primary);
-    color: rgb(255,255,255);
+    color: rgb(255, 255, 255);
+  }
+
+  &--link {
+    border: 0;
+    background: transparent;
   }
 }
 
-.text-center{
+.text-center {
   text-align: center;
 }
 
