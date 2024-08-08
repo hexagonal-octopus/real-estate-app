@@ -5,3 +5,13 @@
     url("../assets/fonts/interVariable.woff2") format("woff2-variations");
   font-weight: 100 1000;
 }
+
+@font-face {
+  font-family: InterVariable;
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('../assets/fonts/InterVariable.woff2?v={{font_v}}') format('woff2');
+}
+
+
